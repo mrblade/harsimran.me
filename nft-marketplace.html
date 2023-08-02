@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9L7PSLVT2K"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Harsimran's Portfolio</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#7E51FF">
@@ -69,6 +69,7 @@
             right: 0;
             width: 100%;
             height: 100%;
+            z-index: 10;
         }
 
         #notice {
@@ -77,28 +78,78 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            background-color: black;
+            position: relative;
+            z-index: 10;
 
         }
 
         .l {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             animation: 30s linear rotate;
             animation-fill-mode: forwards;
             animation-iteration-count: infinite;
+            z-index: 0;
+        }
+
+        .hide {
+            display: none !important;
         }
 
         @keyframes rotate {
             from {
-                transform: rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
             }
 
             to {
-                transform: rotate(3600deg);
+                transform: translate(-50%, -50%) rotate(3600deg);
             }
         }
     </style>
+    <script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9L7PSLVT2K');
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            if (window.navigator.maxTouchPoints || 'ontouchstart' in document) {
+                // is mobile
+                document.querySelector('.l').classList.add('hide');
+                document.querySelector('#notice').classList.remove('hide');
+            }
+            else {
+                document.getElementById('notice').classList.add('hide');
+                var ifrm = document.createElement("iframe");
+                ifrm.setAttribute("src", "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/oUD4KoPxSE5EuTpH3k1xDA/P?page-id=533%3A31947&node-id=533%3A54581&viewport=-1271%2C-121%2C0.3&scaling=scale-down-width&starting-point-node-id=533%3A54581&show-proto-sidebar=1&hide-ui=1");
+                document.body.appendChild(ifrm);
+            }
+
+        });
+    </script>
 </head>
 
 <body>
+    <!-- Notice -->
+    <div class="hide" id="notice"><img alt="Harsimran&#39;s Portfolio" width=100 height=100 src="/favicon.svg">
+        <h3>Mobile preview unavailable</h3>
+        <p>Please switch to a desktop browser</p><a class="btn outline" href="mailto:harsimran.290194@gmail.com">Contact
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h13M12 5l7 7-7 7" />
+            </svg></a>
+        <a class="btn" href="https://drive.google.com/file/d/1dDRizY2rAY8l6VIMpP-zfKJymR0EaSm4/view?usp=sharing">View
+            Resume <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h13M12 5l7 7-7 7" />
+            </svg></a>
+    </div>
     <svg class="l" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
         stroke="#7f50ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="2" x2="12" y2="6"></line>
@@ -110,9 +161,6 @@
         <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
         <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
     </svg>
-    <iframe
-        src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/oUD4KoPxSE5EuTpH3k1xDA/P?page-id=533%3A31947&node-id=533%3A54581&viewport=-1271%2C-121%2C0.3&scaling=scale-down-width&starting-point-node-id=533%3A54581&show-proto-sidebar=1&hide-ui=1"
-        frameborder="0"></iframe>
 </body>
 
 </html>
