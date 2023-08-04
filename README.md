@@ -1,3 +1,3 @@
 # https://harsimran.me
-### Portfolio Hosted on surge.sh
-https://surge.sh/
+### Portfolio Hosted on Cloudflare Pages
+https://pages.dev/
