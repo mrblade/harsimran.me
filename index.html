@@ -126,7 +126,7 @@
 
         document.addEventListener("DOMContentLoaded", function (event) {
 
-            if (window.navigator.maxTouchPoints || 'ontouchstart' in document) {
+            if (navigator.userAgentData.mobile) {
                 // is mobile
                 document.querySelector('.l').classList.add('hide');
                 document.querySelector('#notice').classList.remove('hide');
