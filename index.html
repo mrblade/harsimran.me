@@ -125,8 +125,8 @@
 
 
         document.addEventListener("DOMContentLoaded", function (event) {
-
-            if (navigator.userAgentData.mobile) {
+            
+            if (( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )) {
                 // is mobile
                 document.querySelector('.l').classList.add('hide');
                 document.querySelector('#notice').classList.remove('hide');

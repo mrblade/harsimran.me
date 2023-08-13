@@ -120,7 +120,7 @@
 
         document.addEventListener("DOMContentLoaded", function (event) {
             
-            if (navigator.userAgentData.mobile) {  //window.navigator.maxTouchPoints || 'ontouchstart' in document
+            if (( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )) {  //window.navigator.maxTouchPoints || 'ontouchstart' in document
                 // is mobile
                 document.querySelector('.l').classList.add('hide');
                 document.querySelector('#notice').classList.remove('hide');
